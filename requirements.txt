@@ -1,0 +1,9 @@
+pandas
+scapy
+PyQt5
+matplotlib
+numpy
+openpyxl
+qtwidgets
+qtpy
+QtRangeSlider
