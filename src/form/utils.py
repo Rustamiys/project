@@ -20,43 +20,6 @@ from stats.statistic import (filter_names, filter_dataframe, get_pie_type_size,
                     get_pie_subtype_count, get_pie_subtype_size, get_pie_proto_size, get_pie_proto_count)
 from datetime import datetime
 
-# # Заглушка: симулируем чтение файла
-# def read_pcap(filename):
-#     # time.sleep(3)  # эмуляция долгой загрузки
-#     data = {
-#         'type': [34525, 2048, 2048, 34525, 2048],
-#         'len': [86, 354, 590, 110, 471],
-#         'time': [
-#             1745226379.370546,
-#             1745226379.403280,
-#             1745226379.409454,
-#             1745226379.427990,
-#             1745226456.680689
-#         ],
-#         'src': [
-#             'e8:5a:8b:0b:8d:7c',
-#             'e8:5a:8b:0b:8d:7c',
-#             'b0:a7:b9:b2:ec:9e',
-#             'e8:5a:8b:0b:8d:7c',
-#             'b0:a7:b9:b2:ec:9e'
-#         ],
-#         'dst': [
-#             '33:33:ff:c3:04:43',
-#             'ff:ff:ff:ff:ff:ff',
-#             'e8:5a:8b:0b:8d:7c',
-#             '33:33:00:00:00:16',
-#             'e8:5a:8b:0b:8d:7c'
-#         ],
-#         'proto': [None, 17.0, 17.0, None, 6.0],
-#         'ip_src': ['::', '0.0.0.0', '192.168.0.1', '::', '87.240.137.208'],
-#         'ip_dst': ['ff02::1:ffc3:443', '255.255.255.255', '192.168.0.104', 'ff02::16', '192.168.0.104'],
-#         'ip_src_port': [None, 68.0, 67.0, None, 443.0],
-#         'ip_dst_port': [None, 67.0, 68.0, None, 47934.0]
-#     }
-
-#     df = pd.DataFrame(data)
-#     return df
-
 class FileLoaderThread(QThread):
     finished = pyqtSignal(object)
 

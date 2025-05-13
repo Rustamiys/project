@@ -39,76 +39,76 @@ types_crypted = {
 
 subtype_crypted = {
     0:{
-        0:	"Association Request",
-        1:	"Association Response",
-        2:	"Reassociation Request",
-        3:	"Reassociation Response",
-        4:	"Probe Request",
-        5:	"Probe Response",
-        6:	"Timing Advertisement",
-        7:	"Reserved",
-        8:	"Beacon",
-        9:	"ATIM",
-        10:	"Disassociation",
-        11:	"Authentication",
-        12:	"Deauthentication",
-        13:	"Action",
-        14:	"Action No Ack",
-        15:	"Reserved"
+        0:	f"Association Request - {types_crypted[0]}",
+        1:	f"Association Response - {types_crypted[0]}",
+        2:	f"Reassociation Request - {types_crypted[0]}",
+        3:	f"Reassociation Response - {types_crypted[0]}",
+        4:	f"Probe Request - {types_crypted[0]}",
+        5:	f"Probe Response - {types_crypted[0]}",
+        6:	f"Timing Advertisement - {types_crypted[0]}",
+        7:	f"Reserved - {types_crypted[0]}",
+        8:	f"Beacon - {types_crypted[0]}",
+        9:	f"ATIM - {types_crypted[0]}",
+        10:	f"Disassociation - {types_crypted[0]}",
+        11:	f"Authentication - {types_crypted[0]}",
+        12:	f"Deauthentication - {types_crypted[0]}",
+        13:	f"Action - {types_crypted[0]}",
+        14:	f"Action No Ack - {types_crypted[0]}",
+        15:	f"Reserved - {types_crypted[0]}"
     },
     1:{
-        0:	"Reserved",
-        1:	"RTS (Request To Send)",
-        2:	"CTS (Clear To Send)",
-        3:	"ACK (Acknowledgment)",
-        4:	"CF-End",
-        5:	"CF-End + CF-ACK",
-        6:	"Control Wrapper",
-        7:	"Block Ack Request (BAR)",
-        8:	"Block Ack (BA)",
-        9:	"PS-Poll",
-        10:	"RTS (повторно зарезерв.)",
-        11:	"(RTS тоже, или QoS+Ctrl)",
-        12: "Reserved",
-        13: "Reserved",
-        14: "Reserved",
-        15: "Reserved",
+        0:	f"Reserved - {types_crypted[1]}",
+        1:	f"RTS (Request To Send) - {types_crypted[1]}",
+        2:	f"CTS (Clear To Send) - {types_crypted[1]}",
+        3:	f"ACK (Acknowledgment) - {types_crypted[1]}",
+        4:	f"CF-End - {types_crypted[1]}",
+        5:	f"CF-End + CF-ACK - {types_crypted[1]}",
+        6:	f"Control Wrapper - {types_crypted[1]}",
+        7:	f"Block Ack Request (BAR) - {types_crypted[1]}",
+        8:	f"Block Ack (BA) - {types_crypted[1]}",
+        9:	f"PS-Poll - {types_crypted[1]}",
+        10:	f"RTS (повторно зарезерв.) - {types_crypted[1]}",
+        11:	f"(RTS тоже, или QoS+Ctrl) - {types_crypted[1]}",
+        12: f"Reserve - {types_crypted[1]}",
+        13: f"Reserved - {types_crypted[1]}",
+        14: f"Reserved - {types_crypted[1]}",
+        15: f"Reserved - {types_crypted[1]}",
     },
     2:{
-        0:	"Data",
-        1:	"Data + CF-ACK",
-        2:	"Data + CF-Poll",
-        3:	"Data + CF-ACK +\n CF-Poll",
-        4:	"Null Data (no data,\n just control)",
-        5:	"CF-ACK (no data)",
-        6:	"CF-Poll (no data)",
-        7:	"CF-ACK + CF-Poll\n (no data)",
-        8:	"QoS Data",
-        9:	"QoS Data +\n CF-ACK",
-        10:	"QoS Data +\n CF-Poll",
-        11:	"QoS Data +\n CF-ACK + CF-Poll",
-        12:	"QoS Null \n(QoS control only)",
-        13: "Reserved",
-        14: "Reserved",
-        15:	"Reserved"
+        0:	f"Data - {types_crypted[2]}",
+        1:	f"Data + CF-ACK - {types_crypted[2]}",
+        2:	f"Data + CF-Poll - {types_crypted[2]}",
+        3:	f"Data + CF-ACK +\n CF-Poll - {types_crypted[2]}",
+        4:	f"Null Data (no data,\n just control) - {types_crypted[2]}",
+        5:	f"CF-ACK (no data) - {types_crypted[2]}",
+        6:	f"CF-Poll (no data) - {types_crypted[2]}",
+        7:	f"CF-ACK + CF-Poll\n (no data) - {types_crypted[2]}",
+        8:	f"QoS Data - {types_crypted[2]}",
+        9:	f"QoS Data +\n CF-ACK - {types_crypted[2]}",
+        10:	f"QoS Data +\n CF-Poll - {types_crypted[2]}",
+        11:	f"QoS Data +\n CF-ACK + CF-Poll - {types_crypted[2]}",
+        12:	f"QoS Null \n(QoS control only) - {types_crypted[2]}",
+        13: f"Reserved - {types_crypted[2]}",
+        14: f"Reserved - {types_crypted[2]}",
+        15:	f"Reserved - {types_crypted[2]}"
     },
     3:{
-        0: "Reserved",
-        1: "Reserved",
-        2: "Reserved",
-        3: "Reserved",
-        4: "Reserved",
-        5: "Reserved",
-        6: "Reserved",
-        7: "Reserved",
-        8: "Reserved",
-        9: "Reserved",
-        10: "Reserved",
-        11: "Reserved",
-        12: "Reserved",
-        13: "Reserved",
-        14: "Reserved",
-        15:	"Reserved"
+        0: f"Reserved - {types_crypted[3]}",
+        1: f"Reserved - {types_crypted[3]}",
+        2: f"Reserved - {types_crypted[3]}",
+        3: f"Reserved - {types_crypted[3]}",
+        4: f"Reserved - {types_crypted[3]}",
+        5: f"Reserved - {types_crypted[3]}",
+        6: f"Reserved - {types_crypted[3]}",
+        7: f"Reserved - {types_crypted[3]}",
+        8: f"Reserved - {types_crypted[3]}",
+        9: f"Reserved - {types_crypted[3]}",
+        10: f"Reserved - {types_crypted[3]}",
+        11: f"Reserved - {types_crypted[3]}",
+        12: f"Reserved - {types_crypted[3]}",
+        13: f"Reserved - {types_crypted[3]}",
+        14: f"Reserved - {types_crypted[3]}",
+        15:	f"Reserved - {types_crypted[3]}"
     }
 }
 
@@ -128,58 +128,34 @@ def filter_dataframe(df, filter_dict, filter_dict_interval):
     return df
 
 def get_pie_type_size(df):
-    dt = df["type"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = protocol_names.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, "Mb"
+    dt = (df.groupby('type')['len'].sum() / (1024  * 1024)).to_dict()
+    dt = {k: round(v, 3) for k, v in dt.items()}
+
+    return dt, "Mb"
 
 def get_pie_type_count(df):
     dt = df["type"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = protocol_names.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, ""
+    return dt, ""
 
 def get_pie_type_count_crypted(df):
     dt = df["type"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = types_crypted.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, ""
+    return dt, ""
 
 def get_pie_type_size_crypted(df):
-    dt = df.groupby('type')['len'].sum().to_dict()
-    named_counts = {}
-    for protocol_num, size in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = types_crypted.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = size / (1024 * 1024)
-    return named_counts, "Mb"
+    dt = (df.groupby('type')['len'].sum() / (1024  * 1024)).to_dict()
+    dt = {k: round(v, 3) for k, v in dt.items()}
+
+    return dt, "Mb"
 
 def get_pie_proto_count(df):
     dt = df["proto"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = protocol_names.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, ""
+    return dt, ""
 
 def get_pie_proto_size(df):
-    dt = df["proto"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = protocol_names.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, "Mb"
+    dt = (df.groupby('proto')['len'].sum() / (1024  * 1024)).to_dict()
+    dt = {k: round(v, 3) for k, v in dt.items()}
+
+    return dt, "Mb"
 
 def get_dict_by_size_time(df):
     min_time = df['time'].min()
@@ -195,7 +171,7 @@ def get_dict_by_size_time(df):
 
     df['time_bin'] = pd.cut(df['time'], bins=bins, labels=labels, include_lowest=True)
     df_grouped = df.groupby('time_bin')['len'].sum().reset_index(name='value')
-    df_grouped['value'] = df_grouped['value'] / (1024 * 1024)
+    df_grouped['value'] = (df_grouped['value'] / (1024 * 1024)).round(3)
     return df_grouped, "Размер пакетов"
 
 
@@ -207,7 +183,6 @@ def get_dict_by_count_time(df):
     interval = round(total_range / bin_count)
     if interval <= 0:
         interval = 1
-    print(min_time, max_time + interval, interval)
     
     bins = np.arange(min_time, max_time + interval, interval)
     labels = pd.to_datetime(bins[:-1], unit='s').strftime('%H:%M:%S')
@@ -219,18 +194,9 @@ def get_dict_by_count_time(df):
 
 def get_pie_subtype_count(df):
     dt = df["type"].value_counts().to_dict()
-    named_counts = {}
-    for protocol_num, count in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = types_crypted.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = count
-    return named_counts, ""
+    return dt, ""
 
 def get_pie_subtype_size(df):
-    dt = df.groupby('type')['len'].sum().to_dict()
-    named_counts = {}
-    for protocol_num, size in dt.items():
-        # Берем имя из словаря, если есть, иначе оставляем число как строку
-        protocol_name = types_crypted.get(protocol_num, str(protocol_num))
-        named_counts[protocol_name] = size / (1024 * 1024)
-    return named_counts, "Mb"
+    dt = (df.groupby('type')['len'].sum() / (1024  * 1024)).to_dict()
+    dt = {k: round(v, 3) for k, v in dt.items()}
+    return dt, "Mb"

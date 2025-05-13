@@ -12,8 +12,6 @@ from PyQt5.QtWidgets import (
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
-from stats.reader import read_pcap
-
 from .widgets import TimeFilterWidget, CheckBoxFilterWidget, RangeFilterWidget
 from stats.statistic import (filter_names, filter_dataframe, get_pie_type_size, get_dict_by_count_time,
     get_pie_type_count, get_pie_type_size_crypted, get_pie_type_count_crypted,
@@ -216,26 +214,26 @@ class MainWindow(QMainWindow):
             ]
         }
 
-        def collect_checked_text(widget, key, cast_func=str):
-            selected = [cast_func(cb.text()) for cb in widget.checkboxes if cb.isChecked()]
+        def collect_checked_text(widget, key):
+            selected = [cb.text() for cb in widget.checkboxes if cb.isChecked()]
             if selected:
                 filter_dict[key] = selected
 
         if "subtype" in df.columns:
             collect_checked_text(self.subtype_widget, "subtype")
-            collect_checked_text(self.type_widget, "type", int)
+            collect_checked_text(self.type_widget, "type")
             collect_checked_text(self.addr1_widget, "addr1")
             collect_checked_text(self.addr2_widget, "addr2")
             collect_checked_text(self.addr3_widget, "addr3")
         else:
-            collect_checked_text(self.type_widget, "type", int)
-            collect_checked_text(self.proto_widget, "proto", float)
+            collect_checked_text(self.type_widget, "type")
+            collect_checked_text(self.proto_widget, "proto")
             collect_checked_text(self.src_widget, "src")
             collect_checked_text(self.dst_widget, "dst")
             collect_checked_text(self.ip_dst_widget, "ip_dst")
             collect_checked_text(self.ip_src_widget, "ip_src")
-            collect_checked_text(self.ip_src_port_widget, "ip_src_port", float)
-            collect_checked_text(self.ip_dst_port_widget, "ip_dst_port", float)
+            collect_checked_text(self.ip_src_port_widget, "ip_src_port")
+            collect_checked_text(self.ip_dst_port_widget, "ip_dst_port")
         
         self.filtered_df = filter_dataframe(df, filter_dict, filter_dict_interval)
 
