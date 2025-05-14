@@ -6,16 +6,17 @@ import time
 from PyQt5.QtCore import Qt, QTimer, QTime, QThread, pyqtSignal, QProcess
 from PyQt5.QtGui import QPixmap, QMovie
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit,
-    QPushButton, QFileDialog, QSizePolicy, QDialog, QMessageBox, QScrollArea, QGridLayout, QInputDialog
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QTableWidget, QTableWidgetItem,
+    QPushButton, QFileDialog, QSizePolicy, QDialog, QMessageBox, QScrollArea, QGridLayout, QInputDialog, QHeaderView
 )
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
 from .widgets import TimeFilterWidget, CheckBoxFilterWidget, RangeFilterWidget
 from stats.statistic import (filter_names, filter_dataframe, get_pie_type_size, get_dict_by_count_time,
-    get_pie_type_count, get_pie_type_size_crypted, get_pie_type_count_crypted,
-    get_dict_by_size_time, get_pie_subtype_count, get_pie_subtype_size, get_pie_proto_size, get_pie_proto_count)
+    get_pie_type_count, get_pie_type_size_crypted, get_pie_type_count_crypted, get_dict_by_size,
+    get_dict_by_size_time, get_pie_subtype_count, get_pie_subtype_size, get_pie_proto_size, get_pie_proto_count,
+    network_utilization_rate, network_traffic_topology, port_activity, management_frames, get_speed_by_time, get_anomaly)
 from datetime import datetime
 
 from .utils import FileLoaderThread, LoadingDialog
@@ -25,8 +26,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Анализатор данных")
-        self.setGeometry(100, 100, 1000, 600)
-        self.setFixedSize(1000, 600)
+        self.setGeometry(100, 100, 1900, 1000)
+        self.setFixedSize(1900, 1000)
 
         self.project_dir = os.getcwd()
 
@@ -81,9 +82,39 @@ class MainWindow(QMainWindow):
         self.filter_button.clicked.connect(self.paint_filters)
         self.button_layout.addWidget(self.filter_button)
 
-        self.create_diagram = QPushButton("Анализ")
-        self.create_diagram.clicked.connect(self.plot_diagram)
+        self.create_diagram = QPushButton("Поиск аномалий")
+        self.create_diagram.clicked.connect(self.create_table)
         self.button_layout.addWidget(self.create_diagram)
+
+    def create_table(self):
+        self.clear_screen()
+
+        all_anomaly = get_anomaly(self.filtered_df)
+
+        self.button_layout = QHBoxLayout()
+        self.main_layout.addLayout(self.button_layout)
+        self.filter_button = QPushButton("Вернуться к фильтрам")
+        self.filter_button.clicked.connect(self.paint_filters)
+        self.button_layout.addWidget(self.filter_button)
+
+        self.table = QTableWidget()
+        self.table.setColumnCount(4)
+        self.table.setRowCount(len(all_anomaly))
+        self.table.setHorizontalHeaderLabels(["Тип аномалии", "Описание аномалий", "Описание последствий", "Уровень"])
+        self.table.horizontalHeader().setStretchLastSection(True)
+        self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.table.setWordWrap(True)
+        self.table.resizeRowsToContents() 
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.table)
+
+        for row, anomaly in enumerate(all_anomaly):
+            for col, value in enumerate(anomaly):
+                item = QTableWidgetItem(str(value))
+                self.table.setItem(row, col, item)
+        self.table.resizeRowsToContents()
+        self.main_layout.addLayout(layout)
 
 
     def load_image(self):
@@ -309,6 +340,7 @@ class MainWindow(QMainWindow):
         df = self.filtered_df
         plot_functions = [
             ("Гистограмма по размеру", get_dict_by_size_time),
+            ("Гистограмма по размеру", get_dict_by_size),
             ("Гистограмма по кол-ву", get_dict_by_count_time),
         ]
         for i, (title, func) in enumerate(plot_functions):
@@ -316,15 +348,47 @@ class MainWindow(QMainWindow):
             fig = plt.Figure()
             ax = fig.add_subplot(111)
             ax.bar(plot_data['time_bin'], plot_data['value'], width=1.0, align='edge')
-
+            ax.legend(
+                [f'{label}: {size}' for label, size in zip(plot_data['time_bin'], plot_data['value'])],
+                loc="center left",
+                fontsize=8,
+                bbox_to_anchor=(-1, 0, 0.5, 1)
+            )
             ax.set_xlabel('Временные интервалы')
             ax.set_ylabel(ylabel)
             ax.set_title(title)  # Используем переданный заголовок
             ax.tick_params(axis='x', labelrotation=45)
             ax.grid(axis='y', linestyle='--', alpha=0.7)
-            fig.tight_layout()
+            grid_layout.addWidget(FigureCanvas(fig), i//2, i%2)
 
-            grid_layout.addWidget(FigureCanvas(fig), i, 0)
+        # Скорость
+        size_group = get_speed_by_time(df)
+        fig = plt.Figure()
+        ax = fig.add_subplot(111)
+        # Цвета для линий (можно настроить)
+        colors = plt.cm.tab10.colors
+        bin_size=100
+        # Построение графиков для каждой пары IP
+        for i, (key, data) in enumerate(size_group.items()):
+            time_bins = sorted(data.keys())
+            x = time_bins  # Время в секундах
+            y = [data[t] / (1024 * 1024) / bin_size for t in time_bins]  # МБ/с
+            
+            ax.plot(
+                x, y,
+                'o-',  # Точки с линиями
+                markersize=4,
+                linewidth=2,
+                color=colors[i % len(colors)],
+                label=f"{key}"
+            )
+
+        ax.set_xlabel('Время (секунды)')
+        ax.set_ylabel('Скорость передачи (МБ/с)')
+        ax.set_title(f'Линейный график мгновенной скорости для каждого подключенного MAC c {pd.to_datetime(df['time'].min(), unit='s').strftime('%H:%M:%S')} по {pd.to_datetime(df['time'].max(), unit='s').strftime('%H:%M:%S')}')
+        ax.legend()
+        ax.grid(True, linestyle='--', alpha=0.7)
+        grid_layout.addWidget(FigureCanvas(fig), 1, 1)
 
         self.main_layout.addLayout(grid_layout)
         self.current_graph_widget = graph_widget
@@ -391,7 +455,7 @@ class MainWindow(QMainWindow):
         # Здесь можно добавить парсинг вывода для автоматического определения устройств
         
     def start_analysis(self):
-        """Начинает анализ конкретного устройства"""
+        """Начинает  конкретного устройства"""
         # Получаем MAC и канал из интерфейса (можно добавить виджеты для ввода)
         bssid, ok = QInputDialog.getText(self, "Введите данные", "MAC адрес устройства:")
         if not ok or not bssid:
@@ -401,12 +465,12 @@ class MainWindow(QMainWindow):
         if not ok or not channel:
             return
         
-        self.output_area.append(f"\nНачинаем анализ устройства {bssid} на канале {channel}...")
+        self.output_area.append(f"\nНачинаем  устройства {bssid} на канале {channel}...")
         
         # Останавливаем мониторинг
         self.monitor_process.terminate()
         
-        # Запускаем анализ конкретного устройства
+        # Запускаем  конкретного устройства
         self.analysis_process = QProcess()
         self.analysis_process.readyReadStandardOutput.connect(self.update_output)
         self.analysis_process.readyReadStandardError.connect(self.update_output)

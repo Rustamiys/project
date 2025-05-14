@@ -39,76 +39,76 @@ types_crypted = {
 
 subtype_crypted = {
     0:{
-        0:	f"Association Request - {types_crypted[0]}",
-        1:	f"Association Response - {types_crypted[0]}",
-        2:	f"Reassociation Request - {types_crypted[0]}",
-        3:	f"Reassociation Response - {types_crypted[0]}",
-        4:	f"Probe Request - {types_crypted[0]}",
-        5:	f"Probe Response - {types_crypted[0]}",
-        6:	f"Timing Advertisement - {types_crypted[0]}",
-        7:	f"Reserved - {types_crypted[0]}",
-        8:	f"Beacon - {types_crypted[0]}",
-        9:	f"ATIM - {types_crypted[0]}",
-        10:	f"Disassociation - {types_crypted[0]}",
-        11:	f"Authentication - {types_crypted[0]}",
-        12:	f"Deauthentication - {types_crypted[0]}",
-        13:	f"Action - {types_crypted[0]}",
-        14:	f"Action No Ack - {types_crypted[0]}",
-        15:	f"Reserved - {types_crypted[0]}"
+        0:	f"{types_crypted[0]} - Association Request",
+        1:	f"{types_crypted[0]} - Association Response",
+        2:	f"{types_crypted[0]} - Reassociation Request",
+        3:	f"{types_crypted[0]} - Reassociation Response",
+        4:	f"{types_crypted[0]} - Probe Request",
+        5:	f"{types_crypted[0]} - Probe Response",
+        6:	f"{types_crypted[0]} - Timing Advertisement",
+        7:	f"{types_crypted[0]} - Reserved",
+        8:	f"{types_crypted[0]} - Beacon",
+        9:	f"{types_crypted[0]} - ATIM",
+        10:	f"{types_crypted[0]} - Disassociation",
+        11:	f"{types_crypted[0]} - Authentication",
+        12:	f"{types_crypted[0]} - Deauthentication",
+        13:	f"{types_crypted[0]} - Action",
+        14:	f"{types_crypted[0]} - Action No Ack",
+        15:	f"{types_crypted[0]} - Reserved"
     },
     1:{
-        0:	f"Reserved - {types_crypted[1]}",
-        1:	f"RTS (Request To Send) - {types_crypted[1]}",
-        2:	f"CTS (Clear To Send) - {types_crypted[1]}",
-        3:	f"ACK (Acknowledgment) - {types_crypted[1]}",
-        4:	f"CF-End - {types_crypted[1]}",
-        5:	f"CF-End + CF-ACK - {types_crypted[1]}",
-        6:	f"Control Wrapper - {types_crypted[1]}",
-        7:	f"Block Ack Request (BAR) - {types_crypted[1]}",
-        8:	f"Block Ack (BA) - {types_crypted[1]}",
-        9:	f"PS-Poll - {types_crypted[1]}",
-        10:	f"RTS (повторно зарезерв.) - {types_crypted[1]}",
-        11:	f"(RTS тоже, или QoS+Ctrl) - {types_crypted[1]}",
-        12: f"Reserve - {types_crypted[1]}",
-        13: f"Reserved - {types_crypted[1]}",
-        14: f"Reserved - {types_crypted[1]}",
-        15: f"Reserved - {types_crypted[1]}",
+        0:	f"{types_crypted[1]} - Reserved",
+        1:	f"{types_crypted[1]} - RTS (Request To Send)",
+        2:	f"{types_crypted[1]} - CTS (Clear To Send)",
+        3:	f"{types_crypted[1]} - ACK (Acknowledgment)",
+        4:	f"{types_crypted[1]} - CF-End",
+        5:	f"{types_crypted[1]} - CF-End + CF-ACK",
+        6:	f"{types_crypted[1]} - Control Wrapper",
+        7:	f"{types_crypted[1]} - Block Ack Request (BAR)",
+        8:	f"{types_crypted[1]} - Block Ack (BA)",
+        9:	f"{types_crypted[1]} - PS-Poll",
+        10:	f"{types_crypted[1]} - RTS (повторно зарезерв.)",
+        11:	f"{types_crypted[1]} - (RTS тоже, или QoS+Ctrl)",
+        12: f"{types_crypted[1]} - Reserve",
+        13: f"{types_crypted[1]} - Reserve",
+        14: f"{types_crypted[1]} - Reserved",
+        15: f"{types_crypted[1]} - Reserved",
     },
     2:{
-        0:	f"Data - {types_crypted[2]}",
-        1:	f"Data + CF-ACK - {types_crypted[2]}",
-        2:	f"Data + CF-Poll - {types_crypted[2]}",
-        3:	f"Data + CF-ACK +\n CF-Poll - {types_crypted[2]}",
-        4:	f"Null Data (no data,\n just control) - {types_crypted[2]}",
-        5:	f"CF-ACK (no data) - {types_crypted[2]}",
-        6:	f"CF-Poll (no data) - {types_crypted[2]}",
-        7:	f"CF-ACK + CF-Poll\n (no data) - {types_crypted[2]}",
-        8:	f"QoS Data - {types_crypted[2]}",
-        9:	f"QoS Data +\n CF-ACK - {types_crypted[2]}",
-        10:	f"QoS Data +\n CF-Poll - {types_crypted[2]}",
-        11:	f"QoS Data +\n CF-ACK + CF-Poll - {types_crypted[2]}",
-        12:	f"QoS Null \n(QoS control only) - {types_crypted[2]}",
-        13: f"Reserved - {types_crypted[2]}",
-        14: f"Reserved - {types_crypted[2]}",
-        15:	f"Reserved - {types_crypted[2]}"
+        0:	f"{types_crypted[2]} - Data",
+        1:	f"{types_crypted[2]} - Data + CF-ACK",
+        2:	f"{types_crypted[2]} - Data + CF-Poll",
+        3:	f"{types_crypted[2]} - Data + CF-ACK +\n CF-Poll",
+        4:	f"{types_crypted[2]} - Null Data (no data,\n just control)",
+        5:	f"{types_crypted[2]} - CF-ACK (no data)",
+        6:	f"{types_crypted[2]} - CF-Poll (no data)",
+        7:	f"{types_crypted[2]} - CF-ACK + CF-Poll\n (no data)",
+        8:	f"{types_crypted[2]} - QoS Data",
+        9:	f"{types_crypted[2]} - QoS Data +\n CF-ACK",
+        10:	f"{types_crypted[2]} - QoS Data +\n CF-Poll",
+        11:	f"{types_crypted[2]} - QoS Data +\n CF-ACK + CF-Poll",
+        12:	f"{types_crypted[2]} - QoS Null \n(QoS control only)",
+        13: f"{types_crypted[2]} - Reserved",
+        14: f"{types_crypted[2]} - Reserved",
+        15:	f"{types_crypted[2]} - Reserved"
     },
     3:{
-        0: f"Reserved - {types_crypted[3]}",
-        1: f"Reserved - {types_crypted[3]}",
-        2: f"Reserved - {types_crypted[3]}",
-        3: f"Reserved - {types_crypted[3]}",
-        4: f"Reserved - {types_crypted[3]}",
-        5: f"Reserved - {types_crypted[3]}",
-        6: f"Reserved - {types_crypted[3]}",
-        7: f"Reserved - {types_crypted[3]}",
-        8: f"Reserved - {types_crypted[3]}",
-        9: f"Reserved - {types_crypted[3]}",
-        10: f"Reserved - {types_crypted[3]}",
-        11: f"Reserved - {types_crypted[3]}",
-        12: f"Reserved - {types_crypted[3]}",
-        13: f"Reserved - {types_crypted[3]}",
-        14: f"Reserved - {types_crypted[3]}",
-        15:	f"Reserved - {types_crypted[3]}"
+        0: f"{types_crypted[3]} - Reserved",
+        1: f"{types_crypted[3]} - Reserved",
+        2: f"{types_crypted[3]} - Reserved",
+        3: f"{types_crypted[3]} - Reserved",
+        4: f"{types_crypted[3]} - Reserved",
+        5: f"{types_crypted[3]} - Reserved",
+        6: f"{types_crypted[3]} - Reserved",
+        7: f"{types_crypted[3]} - Reserved",
+        8: f"{types_crypted[3]} - Reserved",
+        9: f"{types_crypted[3]} - Reserved",
+        10: f"{types_crypted[3]} - Reserved",
+        11: f"{types_crypted[3]} - Reserved",
+        12: f"{types_crypted[3]} - Reserved",
+        13: f"{types_crypted[3]} - Reserved",
+        14: f"{types_crypted[3]} - Reserved",
+        15: f"{types_crypted[3]} - Reserved",
     }
 }
 
@@ -158,14 +158,16 @@ def get_pie_proto_size(df):
     return dt, "Mb"
 
 def get_dict_by_size_time(df):
+
     min_time = df['time'].min()
     max_time = df['time'].max()
     total_range = max_time - min_time
     bin_count = 20
+    if pd.isna(total_range):
+        total_range = 1
     interval = round(total_range / bin_count)
     if interval <= 0:
         interval = 1
-    print(min_time, max_time + interval, interval)
     bins = np.arange(min_time, max_time + interval, interval)
     labels = pd.to_datetime(bins[:-1], unit='s').strftime('%H:%M:%S')
 
@@ -174,16 +176,38 @@ def get_dict_by_size_time(df):
     df_grouped['value'] = (df_grouped['value'] / (1024 * 1024)).round(3)
     return df_grouped, "Размер пакетов"
 
+def get_dict_by_size(df):
+    if df.empty:
+        return {'time_bin': [], 'value': []}, "Размер пакетов"
+    
+    # Создаем bins для группировки по размеру
+    max_len = df['len'].max()
+    bins = np.arange(0, max_len + 100, 100)
+    
+    # Группируем данные по диапазонам размеров
+    df['size_group'] = pd.cut(df['len'], bins=bins, right=False)
+    size_counts = df['size_group'].value_counts().sort_index()
+    
+    # Подготавливаем данные для графика
+    plot_data = {
+        'time_bin': [str(interval) for interval in size_counts.index],
+        'value': size_counts.values
+    }
+    
+    return plot_data, "Количество пакетов по размеру"
+
 
 def get_dict_by_count_time(df):
+
     min_time = df['time'].min()
     max_time = df['time'].max()
     total_range = max_time - min_time
     bin_count = 20
+    if pd.isna(total_range):
+        total_range = 1
     interval = round(total_range / bin_count)
     if interval <= 0:
         interval = 1
-    
     bins = np.arange(min_time, max_time + interval, interval)
     labels = pd.to_datetime(bins[:-1], unit='s').strftime('%H:%M:%S')
 
@@ -193,10 +217,189 @@ def get_dict_by_count_time(df):
     return df_grouped, "Количество пакетов"
 
 def get_pie_subtype_count(df):
-    dt = df["type"].value_counts().to_dict()
+    dt = df["subtype"].value_counts().to_dict()
     return dt, ""
 
 def get_pie_subtype_size(df):
-    dt = (df.groupby('type')['len'].sum() / (1024  * 1024)).to_dict()
+    dt = (df.groupby('subtype')['len'].sum() / (1024  * 1024)).to_dict()
     dt = {k: round(v, 3) for k, v in dt.items()}
     return dt, "Mb"
+
+def detect_network_utilization_anomalies(df, bandwidth_bps=100_000_000, interval=1.0):
+    """
+    Анализирует загрузку сети и выявляет аномалии по временам превышения заданных порогов.
+
+    Параметры:
+        df (pd.DataFrame): DataFrame с колонками ['time', 'len']
+        bandwidth_bps (int): Пропускная способность канала в битах/сек (по умолчанию 100 Мбит/с)
+        interval (float): Интервал времени группировки в секундах (по умолчанию 1 секунда)
+
+    Возвращает:
+        pd.DataFrame: Таблица с колонками ['time_sec', 'bytes', 'utilization_pct', 'status']
+        где 'status' — это одна из меток: 'normal', 'warning', 'critical'
+    """
+
+    df = df.copy()
+    df['time_sec'] = (df['time'] // interval).astype(int) * interval
+
+    # Суммируем байты по интервалам
+    traffic = df.groupby('time_sec')['len'].sum().reset_index()
+    traffic['bits'] = traffic['len'] * 8
+    traffic['utilization_pct'] = (traffic['bits'] / (bandwidth_bps * interval)) * 100
+
+    # Определяем статус
+    def status(util):
+        if util > 80:
+            return 'critical'
+        elif util > 70:
+            return 'warning'
+        else:
+            return 'normal'
+
+    traffic['status'] = traffic['utilization_pct'].apply(status)
+
+    return traffic
+
+def network_utilization_rate(df, bandwidth_bps=100_000_000):
+    diff = (df['time'].max() - df['time'].min())
+    if diff != 0:
+        return 100 * df['len'].sum() * 8/(bandwidth_bps * diff)
+    return -1
+
+def distribution_of_network_protocols_by_type(df):
+    counts = df["type"].value_counts()
+    percentages = (counts / counts.sum() * 100).round(2).to_dict()
+    return percentages
+
+def distribution_of_network_protocols_by_proto(df):
+    counts = df["proto"].value_counts()
+    percentages = (counts / counts.sum() * 100).round(2).to_dict()
+    return percentages
+
+def network_traffic_topology(df):
+    mask = ~(
+        df["ip_src"].str.startswith("192.168.") |
+        df["ip_src"].str.startswith("0.0.0.0") |
+        df["ip_src"].str.startswith("f") |
+        df["ip_src"].str.startswith(":")
+    )
+    df = df[mask]
+    counts = df["ip_src"].value_counts()
+    percentages = (counts / counts.sum() * 100).round(2).to_dict()
+    return percentages
+    
+
+def port_activity(df):
+    mask = ~(
+        df["ip_src"].str.startswith("192.168.") |
+        df["ip_src"].str.startswith("0.0.0.0") |
+        df["ip_src"].str.startswith("f") |
+        df["ip_src"].str.startswith(":")
+    )
+
+    df = df[~df["ip_src_port"].isin(["80", "53", "443", "22", "137", "138", "139", "445", "123"])]
+    df = df[mask]
+    combo = df["ip_src"].astype(str) + ":" + df["ip_src_port"].astype(str)
+    result = combo.value_counts().to_dict()
+    return result
+
+def management_frames(df):
+    df = df[df["type"] == types_crypted[0]]
+    counts = df["subtype"].value_counts()
+    percentages = (counts / counts.sum() * 100).round(2).to_dict()
+    return percentages
+
+def control_frames(df):
+    df = df[df["type"] == types_crypted[1]]
+    counts = df["subtype"].value_counts()
+    percentages = (counts / counts.sum() * 100).round(2).to_dict()
+    return percentages
+
+def get_speed_by_time(df):
+    bin_size=100
+    start_time = df['time'].min()
+    interval = (df['time'].max() - start_time) / bin_size 
+    df['time_bin'] = ((df['time'] - start_time) // interval).astype(int)
+    true_key = ["82:D0:B1:13:30:10", #iphone Farid
+                "4C:79:6E:58:43:50", #nout Farid
+                "E8:5A:8B:0B:8D:7C", #phone Rustam
+                "B0:A7:B9:B2:EC:9E"]
+    size_group = {}
+    if "subtype" in df:
+        key = "addr2"
+    else:
+        key = "src"
+    for _, row in df.iterrows(): 
+        src = row[key]
+        time_bin = row['time_bin']
+        # if not src in true_key:
+        #     continue
+        if src not in size_group:
+            size_group[src] = {}
+        
+        if time_bin not in size_group[src]:
+            size_group[src][time_bin] = 0
+        
+        size_group[src][time_bin] += row['len']
+    return size_group
+
+
+def get_anomaly(df):
+    anomalies = []
+
+    # Загрузка сети
+    urate = network_utilization_rate(df)
+    if urate>=0 and urate <=70:
+        anomalies.append(["Загрузка сети (Network Utilization)", "", "", "Нормальные значения"])
+    elif urate<=80 and urate >=70:
+        anomalies.append(["Загрузка сети (Network Utilization)", "", "", "Предупреждающая зона"])
+    elif urate>80:
+        anomalies.append(["Загрузка сети (Network Utilization)", "Превышение порога в 80% свидетельствует о риске потерь данных и нестабильной работе сети.", "Возможны потери пакетов, перегрузка буферов", "Аномалия"])
+
+
+    if "subtype" in df.columns:
+        # Management–фреймы (Тип 0)
+        manage = management_frames(df)
+        if subtype_crypted[0][12] in manage:
+            if manage[subtype_crypted[0][12]] > 1:
+                anomalies.append(["Management–фреймы (Тип 0)", "Deauth–фреймов >1% от всех Management–фреймов", "Признак DoS–атаки на клиентов.", "Аномалия"])
+            else:
+                anomalies.append(["Management–фреймы (Тип 0)", "Deauth–фреймов <1% от всех Management–фреймов", "", "Нормальные значения"])
+        if subtype_crypted[0][4] in manage or subtype_crypted[0][5] in manage:
+            q = 0
+            if subtype_crypted[0][4] in manage:
+                q += manage[subtype_crypted[0][4]]
+            if subtype_crypted[0][5] in manage:
+                q += manage[subtype_crypted[0][5]]
+            if q > 10:
+                anomalies.append(["Management–фреймы (Тип 0)", "Probe–запросов >10% от всех Management–фреймов", "Активное сканирование сети злоумышленником.", "Аномалия"])
+            else:
+                anomalies.append(["Management–фреймы (Тип 0)", "Deauth–фреймов <1% от всех Management–фреймов", "", "Нормальные значения"])
+    else:
+        # Распределение сетевых протоколов
+        dist = distribution_of_network_protocols_by_type(df)
+        if protocol_names[2] in dist:
+            if dist[protocol_names[2]] > 0.01:
+                anomalies.append(["Распределение сетевых протоколов", "ICMP >0.1% от всех Data–фреймов", "Может указывать на сканирование сети или атаку ping flood.", "Аномалия"])
+            
+            else:
+                anomalies.append(["Распределение сетевых протоколов", "ICMP >0.1% от всех Data–фреймов", "", "Нормальные значения"])
+
+        dist = distribution_of_network_protocols_by_proto(df)
+        if protocol_names[2054] in dist:
+            if dist[protocol_names[2054]] > 5:
+                anomalies.append(["Распределение сетевых протоколов", "ARP >5% от всех Data–фреймов", "Может свидетельствовать о сетевой петле (ARP–шторм) или атаке ARP–spoofing.", "Аномалия"])
+            else:
+                anomalies.append(["Распределение сетевых протоколов", "ARP <5% от всех Data–фреймов", "", "Нормальные значения"])
+        # Топология сетевого трафика
+        toprate = network_traffic_topology(df)
+        for key in toprate.keys():
+            if toprate[key] >= 50:
+                anomalies.append(["Топология сетевого трафика", f"IP {key} занимает {toprate[key]}", "Возможная DDoS–атака или внутреннее заражение.", "Аномалия"])
+        # Портовая активность
+        port_activity_ = port_activity(df)
+        for key in port_activity_.keys():
+            anomalies.append(["Топология сетевого трафика", f"Использование нестандартных портов {port_activity_} ", "Может указывать на попытку эксплуатации уязвимостей с помощью вредоносных инструментов (Metasploit, Netcat, трояны).", "Аномалия"])
+
+
+    return anomalies

@@ -29,8 +29,8 @@ def read_pcap_crypted(filename):
                 subtype = subtype_crypted[int(p.type)][subtype]
         df[i].extend([subtype, ptype, p.addr1, p.addr2, p.addr3, float(p.time), len(p)])
         i+=1
-        if i>50:
-            break
+        # if i>50000:
+        #     break
 
     df = pd.DataFrame(df, columns=["subtype", "type", "addr1", "addr2", "addr3", "time", "len"])
 
@@ -89,8 +89,8 @@ def read_pcap_decrypted(filename):
                         pdport = str(int(pdport))
                     df[i].extend([psport, pdport])
         i+=1
-        if i>50:
-            break
+        # if i>500:
+        #     break
     df = pd.DataFrame(df, columns=["type", "len", "time", "src", "dst", "proto", "ip_src", "ip_dst", "ip_src_port", "ip_dst_port"])
 
     return df
